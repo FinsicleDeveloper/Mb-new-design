@@ -54,6 +54,7 @@ dependencies:
   icons_plus: ^4.0.0
   like_button: ^2.0.5
   lottie: ^2.3.1
+  mongo_dart: ^0.9.1
   neumorphic_ui: ^1.0.0
   one_clock: ^1.0.9
   path_provider: ^2.0.14

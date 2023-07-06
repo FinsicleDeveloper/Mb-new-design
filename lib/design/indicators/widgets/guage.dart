@@ -9,7 +9,7 @@ class Guage extends StatelessWidget {
   });
   final double needleValue;
   final bool isOsillator;
-  final double guageWidth = 20;
+  final double guageWidth = 28  ;       
   @override
   Widget build(BuildContext context) {
     return SfRadialGauge(
@@ -37,12 +37,12 @@ class Guage extends StatelessWidget {
               startValue: 0,
               endValue: 20,
               color: !isOsillator ? Colors.red : Colors.green,
-              label: !isOsillator ? "Strong Sell" : "Extreme fear",
+              label: !isOsillator ? "Strong\nSell" : "Extreme\nfear",
               labelStyle: labelStyle(),
             ),
             GaugeRange(
                 startWidth: guageWidth,
-                endWidth: guageWidth,
+                endWidth: guageWidth,    
                 startValue: 20,
                 endValue: 40,
                 color: isOsillator
@@ -74,7 +74,7 @@ class Guage extends StatelessWidget {
                 startValue: 80,
                 endValue: 100,
                 color: isOsillator ? Colors.red : Colors.green,
-                label: !isOsillator ? "Strong Buy" : "Extreme Greed",
+                label: !isOsillator ? "Strong\nBuy" : "Extreme\nGreed",
                 labelStyle: labelStyle())
           ],
           pointers: <GaugePointer>[
@@ -94,5 +94,5 @@ class Guage extends StatelessWidget {
   }
 
   GaugeTextStyle labelStyle() => const GaugeTextStyle(
-      fontFamily: "Lora", fontSize: 10, color: Colors.black);
+      fontFamily: "Lora", fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold);
 }
