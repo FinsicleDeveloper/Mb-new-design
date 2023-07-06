@@ -9,73 +9,73 @@ class Guage extends StatelessWidget {
   });
   final double needleValue;
   final bool isOsillator;
+  final double guageWidth = 20;
   @override
   Widget build(BuildContext context) {
     return SfRadialGauge(
       axes: <RadialAxis>[
         RadialAxis(
+          // minorTickStyle: MinorTickStyle(color: Colors.green,),
+          //majorTickStyle: MajorTickStyle(color: Colors.white),
           minimum: 0,
           maximum: 100,
-          showLabels: false,
-          annotations:  [
-            //  GaugeAnnotation(  
-            //   angle: 36,  
-            //   positionFactor: 0.6, 
-            //   widget: Text(
-            //     !isOsillator ? "Strong Sell" : "Extreme fear",
-            //     style: const TextStyle(fontFamily: "Lora"),
-            //   ),
-            // ),
-          ],
+          showLabels: true,
+          // annotations:  [
+          //    GaugeAnnotation(
+          //     angle: 36,
+          //     positionFactor: 0.6,
+          //     widget: Text(
+          //       !isOsillator ? "Strong Sell" : "Extreme fear",
+          //       style: const TextStyle(fontFamily: "Lora", color: Colors.amber),
+          //     ),
+          //   ),
+          // ],
           ranges: <GaugeRange>[
             GaugeRange(
-              startWidth: 5,
-              endWidth: 5,    
-              startValue: 0,  
+              startWidth: guageWidth,
+              endWidth: guageWidth,
+              startValue: 0,
               endValue: 20,
-            color:!isOsillator ? Colors.red :  Colors.green,  
-             //label: !isOsillator ? "Strong Sell" : "Extreme fear",
-              labelStyle: const GaugeTextStyle(fontFamily: "Lora"),  
+              color: !isOsillator ? Colors.red : Colors.green,
+              label: !isOsillator ? "Strong Sell" : "Extreme fear",
+              labelStyle: labelStyle(),
             ),
             GaugeRange(
-              startWidth: 5,
-              endWidth: 5,
-              startValue: 20,
-              endValue: 40,
-                   color: isOsillator ?  const Color.fromARGB(255, 128, 201, 130) : const Color.fromARGB(255, 252, 101, 90),
-            // label: !isOsillator ? "Sell" : "Fear",
-              labelStyle: const GaugeTextStyle(fontFamily: "Lora"),
-        
-            ),
+                startWidth: guageWidth,
+                endWidth: guageWidth,
+                startValue: 20,
+                endValue: 40,
+                color: isOsillator
+                    ? const Color.fromARGB(255, 128, 201, 130)
+                    : const Color.fromARGB(255, 252, 101, 90),
+                label: !isOsillator ? "Sell" : "Fear",
+                labelStyle: labelStyle()),
             GaugeRange(
-                startWidth: 5,
-                endWidth: 5,
-                labelStyle: const GaugeTextStyle(fontFamily: "Lora"),
+                startWidth: guageWidth,
+                endWidth: guageWidth,
+                labelStyle: labelStyle(),
                 startValue: 40,
                 endValue: 60,
                 color: const Color.fromARGB(255, 248, 171, 54),
-               // label: !isOsillator ? "Neutral" : "Stable"
-                ),
+                label: !isOsillator ? "Neutral" : "Stable"),
             GaugeRange(
-              startWidth: 5,
-              endWidth: 5,
-              startValue: 60,
-              endValue: 80,
-           
-              
-                 color: !isOsillator ?  const Color.fromARGB(255, 128, 201, 130) : const Color.fromARGB(255, 252, 101, 90),
-            // label: !isOsillator ? "Buy" : "Greed",
-              labelStyle: const GaugeTextStyle(fontFamily: "Lora"),
-            ),
+                startWidth: guageWidth,
+                endWidth: guageWidth,
+                startValue: 60,
+                endValue: 80,
+                color: !isOsillator
+                    ? const Color.fromARGB(255, 128, 201, 130)
+                    : const Color.fromARGB(255, 252, 101, 90),
+                label: !isOsillator ? "Buy" : "Greed",
+                labelStyle: labelStyle()),
             GaugeRange(
-              startWidth: 5,
-              endWidth: 5,
-              startValue: 80,
-              endValue: 100,
-                    color: isOsillator ? Colors.red :  Colors.green,  
-            // label: !isOsillator ? "Strong Buy" : "Extreme Greed",
-              labelStyle: const GaugeTextStyle(fontFamily: "Lora",color: Colors.black),
-            )
+                startWidth: guageWidth,
+                endWidth: guageWidth,
+                startValue: 80,
+                endValue: 100,
+                color: isOsillator ? Colors.red : Colors.green,
+                label: !isOsillator ? "Strong Buy" : "Extreme Greed",
+                labelStyle: labelStyle())
           ],
           pointers: <GaugePointer>[
             NeedlePointer(
@@ -83,13 +83,16 @@ class Guage extends StatelessWidget {
               needleEndWidth: 4,
               needleStartWidth: 0,
               needleLength: 0.7,
-              knobStyle: const KnobStyle(color: Colors.black, knobRadius: 0.08),
+              knobStyle: const KnobStyle(color: Colors.white, knobRadius: 0.08),
               value: needleValue,
-              needleColor: Colors.black,
+              needleColor: Colors.white70,
             )
           ],
         )
       ],
     );
   }
+
+  GaugeTextStyle labelStyle() => const GaugeTextStyle(
+      fontFamily: "Lora", fontSize: 10, color: Colors.black);
 }

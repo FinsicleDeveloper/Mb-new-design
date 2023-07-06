@@ -24,28 +24,34 @@
 //       child: Container(
 //         decoration: BoxDecoration(
 //             borderRadius: BorderRadius.circular(circular), 
-//             color: AppColors.kWhite,
+//             color:AppColors.kbgcolor,
 //             boxShadow: [
 //               BoxShadow(  
 //                   offset: -distance,
 //                   color: AppColors.kWhite,
 //                   inset: inset,
+//                   spreadRadius: 1,
 //                   blurRadius: blur),
 //               BoxShadow(
 //                   offset: distance,
-//                   color: AppColors.kWhite, 
+//                   color:const Color(0XFFBEBEBE), 
 //                   blurRadius: blur,
+//                   spreadRadius: 1,
 //                   inset: inset)
 //             ],
-//             //             gradient: const LinearGradient(begin: Alignment.topLeft,
+//             //             gradient: const LinearGradient(
+//
+//
+//begin: Alignment.topLeft,
 //             // end: Alignment.bottomRight,
 //             // colors: [
-//             //   AppColors.white,
-//             //   Colors.black 
+//             //   Color(0XFFc1c1c1),
+//             //   Color(0XFFE5E5E5)
+              
 //             // ],
 //             // stops: [
-//             //   0.1,
-//             //   0.9
+//             //   0,
+//             //   1
 //             // ]
             
             

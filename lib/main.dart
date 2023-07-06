@@ -1,6 +1,5 @@
 import 'package:design/constants/appcolors.dart';
 import 'package:design/design/home/home.dart';
-import 'package:design/design/indicators/page_indicators.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     theme: ThemeData(
-      scaffoldBackgroundColor: AppColors.kBlackedColor
+      scaffoldBackgroundColor: AppColors.kbgcolor
     ),
       home: const Home(),
     );
