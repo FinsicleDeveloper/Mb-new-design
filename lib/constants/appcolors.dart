@@ -7,6 +7,7 @@ class AppColors {
 
 static  Color kbgcolor = Colors.white;
 static const Color kbgGreen = Color(0xff263016);
+static const  Color kbgGreen2 = Color(0XFF585F4F);
  static const Color kBlackedColor = Colors.black; 
  static const Color kWhite = Color(0xFFFFFFFF);
 // static const Color kblackShade = Color(0xFF2A2F37);

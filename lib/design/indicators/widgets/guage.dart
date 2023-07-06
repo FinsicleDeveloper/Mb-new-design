@@ -9,7 +9,7 @@ class Guage extends StatelessWidget {
   });
   final double needleValue;
   final bool isOsillator;
-  final double guageWidth = 20;
+  final double guageWidth = 25;
   @override
   Widget build(BuildContext context) {
     return SfRadialGauge(
@@ -19,7 +19,7 @@ class Guage extends StatelessWidget {
           //majorTickStyle: MajorTickStyle(color: Colors.white),
           minimum: 0,
           maximum: 100,
-          showLabels: true,
+          showLabels: false,
           // annotations:  [
           //    GaugeAnnotation(
           //     angle: 36,
@@ -37,7 +37,7 @@ class Guage extends StatelessWidget {
               startValue: 0,
               endValue: 20,
               color: !isOsillator ? Colors.red : Colors.green,
-              label: !isOsillator ? "Strong Sell" : "Extreme fear",
+              label: !isOsillator ? "Strong\nSell" : "Extreme\nfear",
               labelStyle: labelStyle(),
             ),
             GaugeRange(
@@ -74,7 +74,7 @@ class Guage extends StatelessWidget {
                 startValue: 80,
                 endValue: 100,
                 color: isOsillator ? Colors.red : Colors.green,
-                label: !isOsillator ? "Strong Buy" : "Extreme Greed",
+                label: !isOsillator ? "Strong\nBuy" : "Extreme\nGreed",
                 labelStyle: labelStyle())
           ],
           pointers: <GaugePointer>[
