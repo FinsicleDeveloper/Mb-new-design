@@ -8,29 +8,30 @@ class PageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: MongodataBaseFunctions.streamData(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
-        } else {
-          if (snapshot.hasData) {
-            // final documents = snapshot.data!;
+    return body();
+    // return StreamBuilder(
+    //   stream: MongodataBaseFunctions.streamData(),
+    //   builder: (context, snapshot) {
+    //     if (snapshot.connectionState == ConnectionState.waiting) {
+    //       return const Center(child: CircularProgressIndicator());
+    //     } else {
+    //       if (snapshot.hasData) {
+    //         // final documents = snapshot.data!;
 
-            // final nifty50 = documents[0];
-            return InkWell(
-                onTap: () {
-                  // print(nifty50);
-                },
-                child: body());
-          } else {
-            return const Center(
-              child: Text("Someting rong"),
-            );
-          }
-        }
-      },
-    );
+    //         // final nifty50 = documents[0];
+    //         return InkWell(
+    //             onTap: () {
+    //               // print(nifty50);
+    //             },
+    //             child: body());
+    //       } else {
+    //         return const Center(
+    //           child: Text("Someting rong"),
+    //         );
+    //       }
+    //     }
+    //   },
+    // );
   }
 
   SafeArea body() {
