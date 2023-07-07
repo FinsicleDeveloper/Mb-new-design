@@ -77,7 +77,8 @@ flutter:
 
   assets:
     - assets/
-    # - assets/image/logo.png
+    - assets/web/
+    - assets/lottie/
     # - assets/image/bear.png
     # - assets/image/bull.png
     # - assets/image/chameleon.png

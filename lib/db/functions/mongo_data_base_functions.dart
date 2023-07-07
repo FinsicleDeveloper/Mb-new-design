@@ -5,6 +5,7 @@ import 'package:design/db/contants/database_contants.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 
 class MongodataBaseFunctions {
+  // ignore: prefer_typing_uninitialized_variables
   static var db, usercollection;
 
   static connect() async {

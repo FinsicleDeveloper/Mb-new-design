@@ -1,7 +1,10 @@
 import 'package:design/constants/appcolors.dart';
-import 'package:design/db/contants/mongo_data_base_functions.dart';
 import 'package:design/design/home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'db/functions/mongo_data_base_functions.dart';
+import 'design/web/functions/loading_state.dart';
 
 void main()async  {
     WidgetsFlutterBinding.ensureInitialized();
@@ -13,12 +16,19 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-      scaffoldBackgroundColor: AppColors.kbgcolor
-    ),
-      home: const Home(),
+    return MultiProvider(
+      providers: [
+           ChangeNotifierProvider<LoadingState>(
+            create: (_) => LoadingState(),
+          ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: AppColors.kBlackedColor
+      ),
+        home: const Home(),
+      ),
     );
   }
 }
