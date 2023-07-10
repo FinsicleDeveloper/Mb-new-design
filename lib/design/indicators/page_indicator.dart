@@ -8,7 +8,7 @@ class PageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return body();
+     return body();
     // return StreamBuilder(
     //   stream: MongodataBaseFunctions.streamData(),
     //   builder: (context, snapshot) {

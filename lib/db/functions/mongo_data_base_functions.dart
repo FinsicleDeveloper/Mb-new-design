@@ -5,16 +5,33 @@ import 'package:design/db/contants/database_contants.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 
 class MongodataBaseFunctions {
-  // ignore: prefer_typing_uninitialized_variables
-  static var db, usercollection;
+ // ignore: prefer_typing_uninitialized_variables
+ static var db, usercollection;
 
-  static connect() async {
-    // db = await Db.create(mongoConnectionUrl);
-    db = await Db.create(DatabaseConstants.mongoConnectionUrl);
+
+static connect()async {
+  final db = Db('mongodb://localhost:27017/marketBeacon');
+    try {
     await db.open();
-    inspect(db);
-    usercollection = db.collection(DatabaseConstants.userConnectionUrl);
+    
+    // Perform database operations here
+    
+ //   await db.close();
+  } catch (e) {
+    print('Connection error: $e');
   }
+}
+
+
+
+//   static connect() async {
+//     // db = await Db.create(mongoConnectionUrl);
+//  final db = Db('mongodb://localhost:27017/my_database');
+//   await db.open();
+//    // await db.open();
+//     inspect(db);
+//   //  usercollection = db.collection(DatabaseConstants.userConnectionUrl);
+//   }
 
   // static Future<List<Map<String, dynamic>>> getData() async {
   //   final arrData = await usercollection.find().limit(10).toList();

@@ -1,5 +1,6 @@
 import 'package:design/constants/appcolors.dart';
 import 'package:design/design/indicators/page_indicator.dart';
+import 'package:design/design/news/news_home.dart';
 import 'package:design/design/web/web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
@@ -25,7 +26,8 @@ class _HomeState extends State<Home> {
   }
 
   final List<Widget> _pages = const [
-    PageIndicator(),
+   PageIndicator(),
+   NewsHome(),    
     WebView(url:'assets/web/market_view.html'),
     WebView(url: "assets/web/economic_calender.html")
     ];

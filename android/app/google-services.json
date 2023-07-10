@@ -1,0 +1,167 @@
+{
+  "project_info": {
+    "project_number": "208326592859",
+    "firebase_url": "https://market-beacon-74abb-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "market-beacon-74abb",
+    "storage_bucket": "market-beacon-74abb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208326592859:android:a9162a8793b1671639327e",
+        "android_client_info": {
+          "package_name": "com.example.mb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208326592859-fltefp189mto18us2vo61vucrbqojtub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKBcTgfAhh4vmfQs7rRoIQ1v9B0bJlyts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208326592859-70558bkev5ikfafdhpcikl5r2o6vh6tn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "208326592859-55asfr5vqv9u9qgtgtk2ccjs4sqanle6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.finsicle.marketBeacon",
+                "app_store_id": "6450702254"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208326592859:android:66a5593468ed631439327e",
+        "android_client_info": {
+          "package_name": "com.finsicle.marketBeacon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208326592859-fltefp189mto18us2vo61vucrbqojtub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKBcTgfAhh4vmfQs7rRoIQ1v9B0bJlyts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208326592859-70558bkev5ikfafdhpcikl5r2o6vh6tn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "208326592859-55asfr5vqv9u9qgtgtk2ccjs4sqanle6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.finsicle.marketBeacon",
+                "app_store_id": "6450702254"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208326592859:android:11ae078713285e8539327e",
+        "android_client_info": {
+          "package_name": "com.finsicle.mb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208326592859-drg58iqdq0rsb0tudduad4lp5kj8un62.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.finsicle.mb",
+            "certificate_hash": "e521e9b1f498f7e6073b500f57e296e1ec7790b4"
+          }
+        },
+        {
+          "client_id": "208326592859-fltefp189mto18us2vo61vucrbqojtub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKBcTgfAhh4vmfQs7rRoIQ1v9B0bJlyts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208326592859-70558bkev5ikfafdhpcikl5r2o6vh6tn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "208326592859-55asfr5vqv9u9qgtgtk2ccjs4sqanle6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.finsicle.marketBeacon",
+                "app_store_id": "6450702254"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208326592859:android:eae1e4c5a82d655f39327e",
+        "android_client_info": {
+          "package_name": "com.finsicle.news_app_prototype"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208326592859-fltefp189mto18us2vo61vucrbqojtub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKBcTgfAhh4vmfQs7rRoIQ1v9B0bJlyts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208326592859-70558bkev5ikfafdhpcikl5r2o6vh6tn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "208326592859-55asfr5vqv9u9qgtgtk2ccjs4sqanle6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.finsicle.marketBeacon",
+                "app_store_id": "6450702254"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -67,9 +67,15 @@ dependencies:
   youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: assets/images/logo.png
 
 flutter:
 
@@ -82,10 +88,10 @@ flutter:
     # - assets/image/bear.png
     # - assets/image/bull.png
     # - assets/image/chameleon.png
-  # fonts:
-  #   - family: Lora
-  #     fonts:
-  #       - asset: assets/fonts/Lora-Regular.ttf
+  fonts:
+    - family: Lora
+      fonts:
+        - asset: assets/fonts/Lora-Regular.ttf
   #   - family: roboto
   #     fonts:
   #       - asset: assets/fonts/Roboto-Regular.ttf

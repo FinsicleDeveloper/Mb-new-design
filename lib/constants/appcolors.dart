@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class AppColors {
 
 
-static  Color kbgcolor = Colors.white;
+static  Color kbgcolor =  Colors.grey[900]!;
 static const Color kbgGreen = Color(0xff263016);
  static const Color kBlackedColor = Colors.black; 
  static const Color kWhite = Color(0xFFFFFFFF);
