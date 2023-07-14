@@ -1,8 +1,10 @@
 
+import 'package:design/design/news/functions/news_model_provider.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/src/widgets/framework.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:provider/provider.dart';
 
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -11,7 +13,7 @@ import '../../../constants/appcolors.dart';
 class NewsPhoto extends StatelessWidget {
   const NewsPhoto({super.key, required this.newsPhoto});
   final String? newsPhoto;
-
+ 
   @override
   Widget build(BuildContext context) {
     if (newsPhoto!.contains('youtube.com')) {
@@ -37,8 +39,8 @@ class NewsPhoto extends StatelessWidget {
 Widget buildImage(url) {
   return ClipRRect(
     borderRadius: const BorderRadius.only(
-      topLeft: Radius.circular(23), // Adjust the radius as needed
-      topRight: Radius.circular(23), // Adjust the radius as needed
+      topLeft: Radius.circular(0), // Adjust the radius as needed
+      topRight: Radius.circular(0), // Adjust the radius as needed
     ),
     child: CachedNetworkImage(
       cacheManager: CacheManager(

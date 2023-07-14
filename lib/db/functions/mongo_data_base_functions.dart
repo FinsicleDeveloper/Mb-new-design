@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:design/db/contants/database_contants.dart';
+import 'package:design/db/constants/database_contants.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 
 class MongodataBaseFunctions {
@@ -10,12 +10,13 @@ class MongodataBaseFunctions {
 
 
 static connect()async {
-  final db = Db('mongodb://localhost:27017/marketBeacon');
+  final db = Db('mongodb://localhost:27017/beacons');
     try {
     await db.open();
-    
+    inspect(db);
     // Perform database operations here
-    
+    usercollection = db.collection(DatabaseConstants.userConnectionUrl);
+  
  //   await db.close();
   } catch (e) {
     print('Connection error: $e');
@@ -42,7 +43,7 @@ static connect()async {
     final controller = StreamController<List<Map<String, dynamic>>>();
 
     Timer.periodic(const Duration(seconds: 1), (timer) async {
-     final newData = await usercollection.find().take(5).toList();
+     final newData = await usercollection.find().toList();
       controller.add(newData);
     });
 

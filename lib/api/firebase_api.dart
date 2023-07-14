@@ -3,7 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 
 
-//
+
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
   print(message.messageId);
@@ -20,14 +20,12 @@ class FirebaseApi {
 
 
 
+ initNotifications()async{
 
-
-Future<void> initNotifications()async{
-  await _firebaseMessaging.requestPermission();
   await _firebaseMessaging.subscribeToTopic("beacons");
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-  final fcmToken = await _firebaseMessaging.getToken();
-  await _firebaseMessaging.requestPermission(
+  
+    NotificationSettings settings  = await _firebaseMessaging.requestPermission(
     alert: true,
     announcement: false,
     badge: true,
@@ -48,7 +46,6 @@ Future<void> initNotifications()async{
     }
   }); 
 
-  print(fcmToken);
   
 }
 

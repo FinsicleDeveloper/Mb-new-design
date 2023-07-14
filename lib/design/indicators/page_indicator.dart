@@ -3,12 +3,17 @@ import 'package:design/db/functions/mongo_data_base_functions.dart';
 import 'package:design/design/indicators/widgets/guage.dart';
 import 'package:flutter/material.dart';
 
-class PageIndicator extends StatelessWidget {
+class PageIndicator extends StatefulWidget {
   const PageIndicator({super.key});
 
   @override
+  State<PageIndicator> createState() => _PageIndicatorState();
+}
+bool isPressed = false;
+class _PageIndicatorState extends State<PageIndicator> {
+  @override
   Widget build(BuildContext context) {
-     return body();
+   return body(20.0, 30.0);
     // return StreamBuilder(
     //   stream: MongodataBaseFunctions.streamData(),
     //   builder: (context, snapshot) {
@@ -16,14 +21,21 @@ class PageIndicator extends StatelessWidget {
     //       return const Center(child: CircularProgressIndicator());
     //     } else {
     //       if (snapshot.hasData) {
-    //         // final documents = snapshot.data!;
+    //         final documents = snapshot.data!;
 
-    //         // final nifty50 = documents[0];
+    //         // final x = documents[0]['NIFTY 50']['spot']['1 mins']
+    //         //     ['oscillator_percentage'];
+
+    //         // final y = documents[0]['NIFTY 50']['spot']['1 mins']
+    //         //     ['indicator_percentage'];
     //         return InkWell(
     //             onTap: () {
-    //               // print(nifty50);
+    //               print("number of documents Loaded ${documents.length}");
     //             },
-    //             child: body());
+    //             child: body(
+    //               20.5,
+    //               25.3,
+    //             ));
     //       } else {
     //         return const Center(
     //           child: Text("Someting rong"),
@@ -33,8 +45,7 @@ class PageIndicator extends StatelessWidget {
     //   },
     // );
   }
-
-  SafeArea body() {
+  SafeArea body(var x, y) {
     return SafeArea(
       child: Scaffold(
         // backgroundColor: Colors.amber,
@@ -50,10 +61,25 @@ class PageIndicator extends StatelessWidget {
                 con(
                   FloatingActionButton(
                     backgroundColor: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                 
+                    },
                     child: const Text(
                       "1 M",
                       style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ),
+                AnimatedContainer(
+                  duration:const  Duration(milliseconds: 100),
+                  child: con(
+                    FloatingActionButton(
+                      backgroundColor: Colors.white,
+                      onPressed: () {},
+                      child: const Text(
+                        "2 M",
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
                   ),
                 ),
@@ -69,14 +95,14 @@ class PageIndicator extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: con(const SizedBox(
+              child: con(SizedBox(
                 height: 200,
                 child: Row(
                   children: [
-                    Expanded(child: Guage(needleValue: 50)),
+                    Expanded(child: Guage(needleValue: x)),
                     Expanded(
                         child: Guage(
-                      needleValue: 50,
+                      needleValue: y,
                       isOsillator: true,
                     ))
                   ],

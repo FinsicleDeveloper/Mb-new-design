@@ -43,9 +43,7 @@ dependencies:
   firebase_storage: ^11.1.0
   flutter:
     sdk: flutter
-  flutter_awesome_alert_box: ^2.1.1
   flutter_cache_manager: ^3.3.0
-  flutter_expandable_fab: ^1.8.1
   flutter_inappwebview: ^5.7.2+3
   flutter_inset_box_shadow: ^1.0.8
   flutter_local_notifications: ^14.0.0+1
@@ -55,12 +53,12 @@ dependencies:
   like_button: ^2.0.5
   lottie: ^2.3.1
   mongo_dart: ^0.9.1
-  neumorphic_ui: ^1.0.0
   one_clock: ^1.0.9
   path_provider: ^2.0.14
   provider: ^6.0.5
   share_plus: ^6.3.4
   shimmer_animation: ^2.1.0+1
+  sign_in_with_apple: ^5.0.0
   syncfusion_flutter_gauges: ^21.2.4
   url_launcher: ^6.1.10
   webview_flutter_plus: ^0.3.0+2
@@ -85,8 +83,7 @@ flutter:
     - assets/
     - assets/web/
     - assets/lottie/
-    # - assets/image/bear.png
-    # - assets/image/bull.png
+    - assets/images/
     # - assets/image/chameleon.png
   fonts:
     - family: Lora
