@@ -1,10 +1,16 @@
 import 'package:design/constants/appcolors.dart';
 import 'package:design/design/login/functions/login_functions.dart';
+import 'package:design/design/login/widgets/or.dart';
 import 'package:flutter/material.dart';
+
+// enum LoginType {
+//   // ignore: constant_identifier_names
+//   Apple,
+//   Google
+// }
 
 class PageLogin extends StatelessWidget {
   const PageLogin({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,29 +18,54 @@ class PageLogin extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
-              child: con(SizedBox(
-            height: 50,
-            width: 180,
-            child: InkWell(
-              onTap: () {
-                try {
-                  LoginFunctionsProvider.signInWithApple();
-                } catch (e) {
-                  print(e.toString());
-                }
-              },
-              child: Row(
-                children: [
-                  Image.asset('assets/images/apple_logo.png'),
-                  const Text("Sign in with Apple")
-                ],
-              ),
-            ),
-          ))),
+        
+          Center(child: loginButton(key: 'Apple')),
+          space(),
+          //  const Or(),
+          space(),
+          Center(child: loginButton(key: 'Google')),
         ],
       ),
     );
+  }
+
+  SizedBox space() => const SizedBox(
+        height: 10,
+      );
+
+  Container loginButton({required String key}) {
+    return con(SizedBox(
+      height: 50,
+      width: 180,
+      child: InkWell(
+        onTap: () {
+          try {
+            LoginFunctionsProvider.signInWithApple();
+          } catch (e) {
+            print(e.toString());
+          }
+        },
+        child: Row(
+          children: [
+            key == 'Google'
+                ? const SizedBox(
+                    width: 10,
+                  )
+                : const SizedBox(),
+            Image.asset(
+              'assets/images/$key.png',
+              width: key == 'Google' ? 28 : null,
+            ),
+            key == 'Google'
+                ? const SizedBox(
+                    width: 10,
+                  )
+                : const SizedBox(),
+            Text("Sign in with $key")
+          ],
+        ),
+      ),
+    ));
   }
 
   Container con(Widget child) {

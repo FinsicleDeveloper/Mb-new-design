@@ -70,11 +70,11 @@ class _HomeState extends State<Home> {
           backgroundColor: AppColors.kBlackedColor,
           selectedItemColor: AppColors.kWhite,
           unselectedItemColor: Colors.grey,
-          marginR: const EdgeInsets.symmetric(horizontal: 42.0, vertical: 20), 
+          marginR: const EdgeInsets.symmetric(horizontal: 42.0, vertical: 20),
           paddingR: const EdgeInsets.only(bottom: 5, top: 5),
           currentIndex: _currentIndex,
           onTap: (int index) {
-            pageController.jumpToPage(index);      
+            pageController.jumpToPage(index);
           },
           items: [
             DotNavigationBarItem(
@@ -88,13 +88,17 @@ class _HomeState extends State<Home> {
                 icon: InkWell(
                     onTap: () {
                       ConfirmAlertBoxDark(
-                        onPressedYes: ()async{
-                        await   LoginFunctionsProvider.logout();
-                          // ignore: use_build_context_synchronously
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                        onPressedYes: () async {
+                          await LoginFunctionsProvider.logout();
+
+                          if (!context.mounted) {
+                            return;
+                          }   //to avoid error while context is using in async function
+
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
                             return const ListenAuthChanges();
                           }));
-                      
                         },
                         context: context,
                         messageTextColor: Colors.white,
@@ -109,5 +113,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-
