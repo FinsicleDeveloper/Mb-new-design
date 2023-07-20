@@ -5,7 +5,6 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:webview_flutter_plus/webview_flutter_plus.dart';
 
-import '../../constants/appcolors.dart';
 import 'functions/loading_state.dart';
 
 

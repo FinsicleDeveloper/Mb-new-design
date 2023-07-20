@@ -57,10 +57,10 @@ class _NewsHomeState extends State<NewsHome> with AutomaticKeepAliveClientMixin 
                         String label = news['ai_sentiment']['label'];
 
                         return NewsCard(
-                          newsTitle: news?['title']?.toString(),
-                          newsPhoto: news?['image']?.toString(),
-                          description: news?['description']?.toString(),
-                          date: news?['published_at'],
+                          newsTitle: news['title']?.toString(),
+                          newsPhoto: news['image']?.toString(),
+                          description: news['description']?.toString(),
+                          date: news['published_at'],
                           newsUrl: news['url'],
                           source: news['source'],
                           newsLabel: label,

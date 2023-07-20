@@ -1,6 +1,5 @@
 import 'package:design/constants/appcolors.dart';
 import 'package:design/design/login/functions/login_functions.dart';
-import 'package:design/design/login/widgets/or.dart';
 import 'package:flutter/material.dart';
 
 // enum LoginType {

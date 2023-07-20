@@ -15,21 +15,9 @@ class Guage extends StatelessWidget {
     return SfRadialGauge(
       axes: <RadialAxis>[
         RadialAxis(
-          // minorTickStyle: MinorTickStyle(color: Colors.green,),
-          //majorTickStyle: MajorTickStyle(color: Colors.white),
           minimum: 0,
           maximum: 100,
           showLabels: true,
-          // annotations:  [
-          //    GaugeAnnotation(
-          //     angle: 36,
-          //     positionFactor: 0.6,
-          //     widget: Text(
-          //       !isOsillator ? "Strong Sell" : "Extreme fear",
-          //       style: const TextStyle(fontFamily: "Lora", color: Colors.amber),
-          //     ),
-          //   ),
-          // ],
           ranges: <GaugeRange>[
             GaugeRange(
               startWidth: guageWidth,

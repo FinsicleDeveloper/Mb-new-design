@@ -52,7 +52,7 @@ class ConfirmAlertBoxDark {
                 infoMessage ?? "Alert message here",
                 style: TextStyle(
                   fontSize: 15,
-                  color: messageTextColor ?? Color(0xFF4E4E4E)),
+                  color: messageTextColor ?? const Color(0xFF4E4E4E)),
               ),
               const SizedBox(
                 height: 20,

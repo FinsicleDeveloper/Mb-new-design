@@ -30,6 +30,7 @@ class _HomeState extends State<Home> {
   }
 
   final List<Widget> _pages = const [
+    
     PageIndicator(),
     NewsHome(),
     WebView(url: 'assets/web/market_view.html'),

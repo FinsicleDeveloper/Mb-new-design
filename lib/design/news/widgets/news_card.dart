@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:design/design/news/widgets/news_title.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 //import 'package:market_beacon/news/widgets/neumorphism/neuphomic_container.dart';
 import '../../../constants/appcolors.dart';
-import '../functions/news_model_provider.dart';
 import 'news.dart';
 import 'news_photo.dart';
 

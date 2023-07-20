@@ -1,10 +1,8 @@
 
-import 'package:design/design/news/functions/news_model_provider.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/src/widgets/framework.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:provider/provider.dart';
 
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
