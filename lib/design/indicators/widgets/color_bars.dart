@@ -24,15 +24,14 @@ class _ColorBarsState extends State<ColorBars> {
 
   @override
   Widget build(BuildContext context) {
-    int totalOi = 0;
+    // int totalOi = 0;
 
-    for (final object in widget.topOiValues) {
-      final oi = object['oi'] as int;
-      totalOi += oi;
-    
-    }
+    // for (final object in widget.topOiValues) {
+    //   final oi = object['oi'] as int;
+    //   totalOi += oi;
+    // }
 
-    final calculatedValue = totalOi * 100;
+    // final calculatedValue = totalOi * 100;
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(18, 10, 18, 3),
@@ -42,70 +41,56 @@ class _ColorBarsState extends State<ColorBars> {
         itemBuilder: (context, index) {
           final object = widget.topOiValues[index];
 
-          final oi = object['oi'] as int;
-          final maxWidth = oi.toDouble() / calculatedValue.toDouble();
+          // final oi = object['oi'] as int;
+          // final maxWidth = oi.toDouble() / calculatedValue.toDouble();
 
-          final double containerWidth =
-              MediaQuery.of(context).size.width * (maxWidth / 100);
+          // final double containerWidth =
+          //     MediaQuery.of(context).size.width * (maxWidth / 100);
           return Row(
             children: [
-              Text(
-                object['name']
-                    .toString()
-                    .substring(object['name'].toString().length - 7),
-                style: const TextStyle(
-                  fontFamily: 'Lora',
-                    fontSize: 12,
-                //    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-                textAlign: TextAlign.left,
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              Expanded(
-                flex: 6,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: vibrantColors[index],
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: [
-                      const BoxShadow(
-                          color: Colors.black,
-                          offset: Offset(5, 5),
-                     //     spreadRadius: 5,
-                          blurRadius: 15),
-                      BoxShadow(
-                          color: Colors.grey.shade800,
-                          offset: const Offset(-4, -4),
-                       //   spreadRadius: 1,
-                          blurRadius: 15),
-                    ],
-                  ),
-
-                //  width: 120,
-                width: containerWidth,
-                  height: 5,
+              SizedBox(
+                width: 53,
+                child: Text(
+                  object['name']
+                      .toString()
+                      .substring(object['name'].toString().length - 7),
+                  style: style1(),
+                  textAlign: TextAlign.justify,
                 ),
               ),
               const SizedBox(
                 width: 5,
               ),
               SizedBox(
-                width: 53,
-                child: Text(
-                  object['oi'].toString(),
-                  
-                  style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.white),
-                  textAlign: TextAlign.right,
+                width: 200,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: vibrantColors[index],
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  width: containerWidth,
+                  height: 5,
                 ),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+              Text(
+                object['oi'].toString(),
+                style: style2(),
+                textAlign: TextAlign.justify,
               ),
             ],
           );
         },
       ),
     );
+  }
+
+  TextStyle style2() => const TextStyle(fontSize: 12, color: Colors.white);
+
+  TextStyle style1() {
+    return const TextStyle(
+        fontFamily: 'Lora', fontSize: 12, color: Colors.white);
   }
 }

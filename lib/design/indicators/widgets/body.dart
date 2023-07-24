@@ -7,7 +7,13 @@ import 'con.dart';
 import 'guage.dart';
 import 'title_widget.dart';
 
-SafeArea body(var x, y, BuildContext ctx,    List<Map<String, dynamic>> top7OiValues,) {
+SafeArea body(
+  var x,
+  y,
+  BuildContext ctx,
+  List<Map<String, dynamic>> top7OiValues,
+  String timeStamp,
+) {
   return SafeArea(
     child: Scaffold(
       backgroundColor: Colors.grey[900],
@@ -42,9 +48,14 @@ SafeArea body(var x, y, BuildContext ctx,    List<Map<String, dynamic>> top7OiVa
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: con(ColorBars(topOiValues: top7OiValues,)),
+            child: con(ColorBars(
+              topOiValues: top7OiValues,
+            )),
+          ),
+          TimerSlider(
+            max: 20,
+            timeStamp: timeStamp,
           )
-          //  const TimerSlider()
         ],
       ),
     ),

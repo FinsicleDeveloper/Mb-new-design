@@ -1,3 +1,5 @@
+import 'package:design/design/indicators/functions/bootom_sheet_provider.dart';
+import 'package:design/design/indicators/functions/timer_changer.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,9 +18,12 @@ StreamBuilder<DatabaseEvent> stremBuilder(DatabaseReference ref) {
           final data = snapshot.data!.snapshot.value as Map<dynamic, dynamic>?;
           final dataList = data!.values.toList();
           String mins = Provider.of<ChangerProvider>(context).mins;
-          final indiatorData = dataList[200];
-          final objName = indiatorData['NIFTY 50'];
-          print(objName);
+          int index = Provider.of<TimeChanger>(context).docIndex;
+          String name = Provider.of<SelectedTextProvider>(context).selectedText;
+          final indiatorData = dataList[index];
+          final String timeStamp = indiatorData['timestamp'];
+          final objName = indiatorData[name];
+   
 
         
 
@@ -52,11 +57,16 @@ StreamBuilder<DatabaseEvent> stremBuilder(DatabaseReference ref) {
           final oscillatorPercentage =
               objName['spot'][mins]['oscillator_percentage'];
 
+
+
+
           return body(
             indicatorPercentage,
             oscillatorPercentage,
             context,
-            top7OiValues
+            top7OiValues,
+            timeStamp,
+
           );
         } else {
           return const Center(

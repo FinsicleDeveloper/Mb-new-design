@@ -1,5 +1,5 @@
 import 'package:design/constants/appcolors.dart';
-import 'package:design/design/home/home.dart';
+import 'package:design/design/indicators/functions/bootom_sheet_provider.dart';
 import 'package:design/design/indicators/functions/changer_provider.dart';
 import 'package:design/design/news/functions/news_model_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,6 +7,8 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'design/indicators/functions/timer_changer.dart';
+import 'design/splash/splash_screen.dart';
 import 'design/web/functions/loading_state.dart';
 import 'firebase_options.dart';
 
@@ -25,7 +27,6 @@ void main() async {
   await fcm.requestPermission();
   final token = await fcm.getToken();
 
-
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   FirebaseMessaging.instance.subscribeToTopic('beacons');
 
@@ -42,11 +43,8 @@ void main() async {
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     print('Got a message whilst in the foreground!');
     print('Message data: ${message.data}');
-    if (message.notification != null) {
-    }
+    if (message.notification != null) {}
   });
-
-  
 
   runApp(const MyApp());
 }
@@ -57,15 +55,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+
+          ChangeNotifierProvider<SelectedTextProvider>(
+          create: (_) => SelectedTextProvider(),
+        ),
         ChangeNotifierProvider<LoadingState>(
           create: (_) => LoadingState(),
         ),
         ChangeNotifierProvider<NewsModelProvider>(
           create: (_) => NewsModelProvider(),
         ),
-       ChangeNotifierProvider<ChangerProvider>(
+        ChangeNotifierProvider<ChangerProvider>(
           create: (_) => ChangerProvider(),
-        ), 
+        ),
+        ChangeNotifierProvider<TimeChanger>(
+          create: (_) => TimeChanger(),
+        ),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -78,7 +83,10 @@ class MyApp extends StatelessWidget {
                   bodySmall:
                       TextStyle(fontFamily: 'Lora', color: AppColors.kWhite)),
               scaffoldBackgroundColor: AppColors.kBlackedColor),
-          home: const Home()),
+          home:const SpalshScreen()
+          
+          
+          ),
     );
   }
 }

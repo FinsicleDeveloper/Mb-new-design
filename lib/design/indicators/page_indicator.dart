@@ -16,6 +16,7 @@ class PageIndicator extends StatefulWidget {
 bool isPressed = false;
 
 class _PageIndicatorState extends State<PageIndicator> {
+
   @override
   Widget build(BuildContext context) {
     final ref = FirebaseDatabase.instance.ref('market');
@@ -27,50 +28,9 @@ class _PageIndicatorState extends State<PageIndicator> {
 
 
 
-
-// class DropButton extends StatelessWidget {
-//   const DropButton({
-//     super.key,
-//     required this.items,
-//     required this.selectedValue,
-//   });
-
-//   final List<String> items;
-//   final String? selectedValue;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return DropdownButtonHideUnderline(
-//       child: DropdownButton2<String>(
-
-//        items: items
-//         .map((String item) => DropdownMenuItem<String>(
-//               value: item,
-//               child: Text(
-//                 item,
-//                 style: const TextStyle(
-//                   fontSize: 14,color: Colors.white,
-//                   fontFamily: 'Lora'
-//                 ),
-//               ),
-//             ))
-//         .toList(),
-//                 value: selectedValue,
-//     onChanged: (String? value) {
-      
-//     },
-//  dropdownStyleData: DropdownStyleData(
-//       maxHeight: 200,
-//       width: 200,
-//       decoration: BoxDecoration(
-//         borderRadius: BorderRadius.circular(30),
-//         color: Colors.black,
-//       ),)
-      
-//       ),
-//     );
-//   }
-// }
+class WarningText{
+  static const String messge = "This information does not constitute a personal recommendation for your actions, so please refrain from considering the data as investment advice. As with any trade, it is essential to conduct thorough research before making any decisions.\n";
+}
 
 
 

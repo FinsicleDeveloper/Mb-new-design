@@ -1,13 +1,10 @@
 import 'package:design/constants/appcolors.dart';
 import 'package:design/design/indicators/page_indicator.dart';
-import 'package:design/design/login/functions/listen_to_auth_changes.dart';
-import 'package:design/design/login/functions/login_functions.dart';
 import 'package:design/design/news/news_home.dart';
 import 'package:design/design/web/web_view.dart';
-import 'package:design/design/widgets/confirm_alert_box.dart';
-import 'package:flutter/material.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
-
+import 'package:flutter/material.dart';
+import 'package:flutter_awesome_alert_box/flutter_awesome_alert_box.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Home extends StatefulWidget {
@@ -18,7 +15,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final pageController = PageController();
+  final pageController = PageController();        
   final googleSignIn = GoogleSignIn();
 
   // ignore: unused_field
@@ -30,12 +27,32 @@ class _HomeState extends State<Home> {
   }
 
   final List<Widget> _pages = const [
-    
     PageIndicator(),
     NewsHome(),
     WebView(url: 'assets/web/market_view.html'),
     WebView(url: "assets/web/economic_calender.html")
   ];
+  void callAlert() {
+    SimpleBgAlertBox(
+      
+      titleTextColor: Colors.green,
+      buttonColor: Colors.green,
+        buttonText: "accept",
+        icon: Icons.warning,
+        title: " ",
+        context: context,
+        infoMessage: WarningText.messge);
+  }
+
+  @override
+  void initState() {
+   Future.delayed(Duration.zero, () {
+      callAlert();
+   });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -79,33 +96,34 @@ class _HomeState extends State<Home> {
           },
           items: [
             DotNavigationBarItem(
-                icon: const Icon(
-              Icons.speed,
-            )),
+              icon: const Icon(
+                Icons.speed,
+              ),
+            ),
             DotNavigationBarItem(icon: const Icon(Icons.feed)),
             DotNavigationBarItem(icon: const Icon(Icons.trending_up_outlined)),
             DotNavigationBarItem(icon: const Icon(Icons.calendar_month)),
             DotNavigationBarItem(
                 icon: InkWell(
                     onTap: () {
-                      ConfirmAlertBoxDark(
-                        onPressedYes: () async {
-                          await LoginFunctionsProvider.logout();
+                      // ConfirmAlertBoxDark(
+                      //   onPressedYes: () async {
+                      //     await LoginFunctionsProvider.logout();
 
-                          if (!context.mounted) {
-                            return;
-                          }   //to avoid error while context is using in async function
+                      //     if (!context.mounted) {
+                      //       return;
+                      //     } //to avoid error while context is using in async function
 
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const ListenAuthChanges();
-                          }));
-                        },
-                        context: context,
-                        messageTextColor: Colors.white,
-                        infoMessage: "Are you sure you want to log out ?",
-                        title: " Are you sure you want to log out?",
-                      );
+                      //     Navigator.push(context,
+                      //         MaterialPageRoute(builder: (context) {
+                      //       return const ListenAuthChanges();
+                      //     }));
+                      //   },
+                      //   context: context,
+                      //   messageTextColor: Colors.white,
+                      //   infoMessage: "Are you sure you want to log out ?",
+                      //   title: " Are you sure you want to log out?",
+                      // );
                     },
                     child: const Icon(Icons.exit_to_app))),
           ],
